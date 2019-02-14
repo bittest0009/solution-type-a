@@ -1,5 +1,8 @@
 package problem01;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -21,6 +24,23 @@ public class Main {
 	}
 	
 	public static int countClap(int number) {
-		return 0;
+		List<Integer> numList = new ArrayList<>();
+		int count = 0;
+		int num = number;
+		
+		while(num/10 != 0) {
+			numList.add(num%10);
+			num /= 10;
+		}
+		numList.add(num);
+		
+		for(int i=0; i<numList.size() ; i++) {
+			int temp = numList.get(i);
+			if(temp==3 || temp==6 || temp==9) {
+				count++;
+			}
+		}
+		
+		return count;
 	}
 }
