@@ -35,7 +35,14 @@ public class Main {
 			tempList.add(tempNum);
 			
 			for(int i=0; i<tempList.size(); i++) {
-				
+				loop :for(int j=0; j<numList.size(); j++ ) {
+					if(i==j && tempList.get(i).equals(tempList.get(j))) {
+						sCount++;
+						break loop;
+					} else if(tempList.get(i).equals(tempList.get(j))) {
+						bCount++;
+					}
+				}
 			}
 			
 			System.out.println("> "+temp);
